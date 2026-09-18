@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#121212">
+  <title>اختر الفرع - BB2 Burger</title>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+  <style>
+    :root {
+      --brand: #FFD000;
+      --brand-hover: #ffba00;
+      --bg-dark: #121212;
+      --text-main: #ffffff;
+      --text-muted: #d0d0d0;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body, html {
+      height: 100%;
+      font-family: "Cairo", sans-serif;
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      overflow: hidden; /* لمنع السكرول في هذه الصفحة */
+    }
+
+    /* 🌟 حاوية الخلفية المتحركة (تأثير احترافي جداً) */
+    .bg-slideshow {
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      z-index: 1;
+      background: url('https://images.unsplash.com/photo-1550547660-d9450f859349?q=80&w=1000&auto=format&fit=crop') center/cover;
+      animation: kenBurns 20s infinite alternate ease-in-out;
+    }
+
+    @keyframes kenBurns {
+      0% { transform: scale(1); }
+      100% { transform: scale(1.15); }
+    }
+
+    /* 🌟 طبقة التهميش والتعتيم (Overlay) */
+    .overlay {
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: linear-gradient(to bottom, rgba(18, 18, 18, 0.7) 0%, rgba(18, 18, 18, 0.95) 100%);
+      backdrop-filter: blur(8px); /* جعل الخلفية زجاجية وباهتة */
+      -webkit-backdrop-filter: blur(8px);
+      z-index: 2;
+    }
+
+    /* 🌟 محتوى الصفحة (الكارت الأوسط) */
+    .splash-content {
+      position: relative;
+      z-index: 3;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .logo-container {
+      margin-bottom: 30px;
+      animation: fadeInDown 1s ease-out;
+    }
+
+    .logo-container img {
+      width: 150px;
+      drop-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    }
+
+    .welcome-text {
+      animation: fadeInUp 1s ease-out 0.2s both;
+    }
+
+    .welcome-text h1 {
+      font-size: 32px;
+      font-weight: 900;
+      margin-bottom: 10px;
+      color: #fff;
+      text-shadow: 0 4px 15px rgba(0,0,0,0.8);
+    }
+
+    .welcome-text h1 span {
+      color: var(--brand);
+    }
+
+    .welcome-text p {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-bottom: 40px;
+      max-width: 400px;
+    }
+
+    /* 🌟 أزرار اختيار الفروع */
+    .branches-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      width: 100%;
+      max-width: 350px;
+      animation: fadeInUp 1s ease-out 0.4s both;
+    }
+
+    .branch-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      background: rgba(30, 30, 30, 0.8);
+      border: 1px solid rgba(255, 208, 0, 0.3);
+      color: #fff;
+      padding: 18px 25px;
+      border-radius: 20px;
+      font-size: 18px;
+      font-weight: 800;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    }
+
+    .branch-btn i {
+      font-size: 22px;
+      color: var(--brand);
+      transition: 0.3s;
+    }
+
+    .branch-btn:hover, .branch-btn:active {
+      background: var(--brand);
+      color: #111;
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(255, 208, 0, 0.4);
+    }
+
+    .branch-btn:hover i, .branch-btn:active i {
+      color: #111;
+    }
+
+    /* الأنيميشن */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- الخلفية المتحركة -->
+  <div class="bg-slideshow"></div>
+  
+  <!-- الفلتر الزجاجي الداكن فوق الخلفية -->
+  <div class="overlay"></div>
+
+  <!-- المحتوى الرئيسي -->
+  <div class="splash-content">
+    
+    <div class="logo-container">
+      <img src="https://i.postimg.cc/90b37MGv/Whats-App-Image-2025-08-22-at-10-03-25-621ae7a1-removebg-preview.png" alt="BB2 Burger Logo"> <!-- تأكد من مسار اللوجو -->
+    </div>
+
+    <div class="welcome-text">
+      <h1>أهلاً بك في <span>BB2 Burger</span></h1>
+      <p>الجودة هي طعمنا المفضل.. من فضلك اختر الفرع الأقرب إليك لعرض المنيو وإتمام طلبك.</p>
+    </div>
+
+    <div class="branches-grid">
+      <!-- 🌟 روابط الفروع (قم بتعديل الـ href لتوجيه العميل لمجلد الفرع الصحيح) -->
+      
+      <!-- فرع قليوب -->
+      <a href="https://bb2-burger-sigma.vercel.app/" class="branch-btn">
+        <i class="fas fa-map-marker-alt"></i>
+        <span>فرع قليوب</span>
+      </a>
+
+      <!-- فرع أكتوبر -->
+      <a href="https://bb2burger2.vercel.app/" class="branch-btn">
+        <i class="fas fa-map-marker-alt"></i>
+        <span>فرع أكتوبر</span>
+      </a>
+
+    </div>
+
+  </div>
+
+</body>
+</html>
